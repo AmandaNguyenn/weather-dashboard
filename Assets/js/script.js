@@ -1,18 +1,4 @@
-//function initPage() {
-    const cityEl = document.getElementById("find-location");
-    const searchEl = document.getElementById("search-button");
-    const nameEl = document.getElementById("city-name");
-    const currentPicEl = document.getElementById("current-pic");
-    const currentTempEl = document.getElementById("temperature");
-    const currentHumidityEl = document.getElementById("humidity");
-    const currentWindEl = document.getElementById("wind-speed");
-    const currentUVEl = document.getElementById("UV-index");
-    const historyEl = document.getElementById("history");
-    var fivedayEl = document.getElementById("fiveday-forecast");
-    var todayweatherEl = document.getElementById("current-weather");
-    var searchHistory = JSON.parse(localStorage.getItem("search")) || [];
-
-    const apiKey = '8c72c4343cd5c617c7afc4ad0c9e6a02';
+const apiKey = '8c72c4343cd5c617c7afc4ad0c9e6a02';
 
     document.querySelector("#search-button").addEventListener("click", function() {
         //get user input
@@ -52,9 +38,9 @@
             <div class="card-body">
                 <h3 id="city-name" class="city-name align-middle">${data.name}</h3>
                 <img id="current-pic" alt="weather icon" src="https://api.openweathermap.org/img/w/${data.weather[0].icon}.png">
-                <p id="temperature">${data.main.temp} F</p>
-                <p id="humidity">${data.main.humidity} %</p>
-                <p id="wind-speed">${data.wind.speed}</p>
+                <p id="temperature">Temperature: ${data.main.temp} F</p>
+                <p id="humidity">Humidity: ${data.main.humidity} %</p>
+                <p id="wind-speed">Wind Speed: ${data.wind.speed} mph</p>
                 <p id="UV-index"></p>
             </div>
             `;
